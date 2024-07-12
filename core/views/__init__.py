@@ -1,1 +1,2 @@
-from .user import UserViewSet
+from .acessorio import AcessorioViewSet
+from .user      import UserViewSet
