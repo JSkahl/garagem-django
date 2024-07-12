@@ -9,17 +9,18 @@ from drf_spectacular.views import (
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from core.views import UserViewSet, AcessorioViewSet, CategoriaViewSet
+from core.views import UserViewSet, AcessorioViewSet, CategoriaViewSet, CorViewSet
 
 router = DefaultRouter()
 
 router.register(r"acessorios", AcessorioViewSet)
 router.register(r"categorias", CategoriaViewSet)
+router.register(r"cores", CorViewSet)
 router.register(r"usuarios", UserViewSet, basename="usuarios")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # OpenAPI 3
+    # OpenAPI 3w
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
         "api/swagger/",
